@@ -12,6 +12,8 @@ function NavBar({ user, setUser }) {
     <nav>
       <Link to="/orders">Order History</Link>
       &nbsp; | &nbsp;
+      <Link to="/fav">Favourite Manga's</Link>
+      &nbsp; | &nbsp;
       <Link to="/collections">Manga Collections</Link>
       &nbsp; | &nbsp;
       <Link to="/orders/new">New Order</Link>

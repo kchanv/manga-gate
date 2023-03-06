@@ -8,6 +8,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Collections from "../Collections/Collections";
 import { getUser } from "../../utilities/users-service";
 import DetailPage from "../DetailPage/DetailPage";
+import Fav from "../Fav/Fav";
 
 function App() {
   const [user, setUser] = useState(getUser);
@@ -23,7 +24,7 @@ function App() {
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/collections" element={<Collections />} />
             <Route path="/collections/:endpoint" element={<DetailPage />} />
-            <Route path="/favs" element={<Fav />} />
+            <Route path="/fav" element={<Fav />} />
           </Routes>
         </>
       ) : (

@@ -1,13 +1,9 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const fav = () => {
-  const [favmanga, setFavManga] = useState([]);
+const Fav = () => {
+  const [favManga] = useState([]);
 
-  const addToFav = (manga) => {
-    setFavManga([...favmanga, manga]);
-  };
   return (
     <>
       <h1>Favorites</h1>
@@ -18,10 +14,8 @@ const fav = () => {
           </li>
         ))}
       </ul>
-      <hr />
-      <Collections addToFavorites={addToFavorites} />
     </>
   );
 };
 
-export default fav;
+export default Fav;
