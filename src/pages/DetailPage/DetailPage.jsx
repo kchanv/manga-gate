@@ -18,12 +18,12 @@ const DetailPage = () => {
     addToFavorites(detail);
     console.log(`Added ${detail.title} to favorites`);
   };
-  }
 
   return (
     <>
       <h1>Detail Page: {detail.title}</h1>
       <img src={detail.thumb} />
+      <button onClick={handleAddToFav}>ADD</button>
     </>
   );
 };
