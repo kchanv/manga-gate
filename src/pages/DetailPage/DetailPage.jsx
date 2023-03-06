@@ -14,6 +14,12 @@ const DetailPage = () => {
       });
   }, []);
 
+  const handleAddToFav = () => {
+    addToFavorites(detail);
+    console.log(`Added ${detail.title} to favorites`);
+  };
+  }
+
   return (
     <>
       <h1>Detail Page: {detail.title}</h1>

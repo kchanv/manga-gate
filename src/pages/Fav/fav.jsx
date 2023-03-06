@@ -3,10 +3,23 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const fav = () => {
-  const [manga, setManga] = useState([]);
+  const [favmanga, setFavManga] = useState([]);
+
+  const addToFav = (manga) => {
+    setFavManga([...favmanga, manga]);
+  };
   return (
     <>
-      <h1>fav</h1>
+      <h1>Favorites</h1>
+      <ul>
+        {favManga.map((manga) => (
+          <li key={manga.id}>
+            <Link to={`/collections/${manga.endpoint}`}>{manga.title}</Link>
+          </li>
+        ))}
+      </ul>
+      <hr />
+      <Collections addToFavorites={addToFavorites} />
     </>
   );
 };

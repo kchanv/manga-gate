@@ -23,6 +23,7 @@ function App() {
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/collections" element={<Collections />} />
             <Route path="/collections/:endpoint" element={<DetailPage />} />
+            <Route path="/favs" element={<Fav />} />
           </Routes>
         </>
       ) : (
