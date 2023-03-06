@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Collections.css";
 
 const Collections = () => {
   const [manga, setManga] = useState([]);
@@ -41,16 +42,18 @@ const Collections = () => {
         />
         <button onClick={() => performSearch()}>Search</button>
       </div>
-      <ul>
-        {manga &&
-          manga.map((m) => {
-            return (
-              <li style={{ listStyle: "none" }} key={m.endpoint}>
-                <Link to={"/collections/" + m.endpoint}>{m.title}</Link>
-              </li>
-            );
-          })}
-      </ul>
+      <div className="links-container">
+        <ul>
+          {manga &&
+            manga.map((m) => {
+              return (
+                <li style={{ listStyle: "none" }} key={m.endpoint}>
+                  <Link to={"/collections/" + m.endpoint}>{m.title}</Link>
+                </li>
+              );
+            })}
+        </ul>
+      </div>
       {manga.length > 0 && (
         <>
           <button
