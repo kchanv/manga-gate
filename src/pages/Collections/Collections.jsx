@@ -51,7 +51,7 @@ const Collections = () => {
             );
           })}
       </ul>
-      {manga.length > 0 && (
+      {manga && manga.length > 0 && (
         <>
           <button
             id="prev"
