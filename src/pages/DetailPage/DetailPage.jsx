@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const DetailPage = (addToFav) => {
+const DetailPage = () => {
   const { endpoint } = useParams();
   const [detail, setDetail] = useState({});
 
@@ -12,11 +12,18 @@ const DetailPage = (addToFav) => {
       .then((resp) => {
         setDetail(resp.data);
       });
-  }, [endpoint]);
+  }, []);
 
   const handleAddToFav = () => {
     addToFav(detail);
     console.log(`Added ${detail.title} to favorites`);
+    console.log(JSON.parse(localStorage.getItem("favorites")));
+  };
+
+  const addToFav = (manga) => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    favorites.push(manga);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
   };
 
   return (
