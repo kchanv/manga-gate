@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
 import "./NavBar.css";
@@ -23,26 +23,34 @@ function NavBar({ user, setUser }) {
     //   </Link>
     // </nav>
     <nav>
-      <div class="logo">
-        <h1>Manga-City</h1>
+      <div className="logo">
+        <h1>MANGA-GATE</h1>
       </div>
       <ul class="nav-links">
-        <li>
-          <Link to="/orders">Order History</Link>
-        </li>
-        <li>
-          <Link to="/collections">Manga Collections</Link>
-        </li>
-        <li>
-          <Link to="/orders/new">New Order</Link>
-        </li>
-        <li>
-          <Link to="" onClick={handleLogOut}>
-            Log Out
-          </Link>
-        </li>
+        <div className="nav-link">
+          <li>
+            <Link to="/orders">Order History</Link>
+          </li>
+        </div>
+        <div className="nav-link">
+          <li>
+            <Link to="/collections">Manga Collections</Link>
+          </li>
+        </div>
+        <div className="nav-link">
+          <li>
+            <Link to="/orders/new">New Order</Link>
+          </li>
+        </div>
+        <div className="nav-link">
+          <li>
+            <Link to="" onClick={handleLogOut}>
+              Log Out
+            </Link>
+          </li>
+        </div>
       </ul>
-      <div class="welcome">
+      <div className="welcome">
         <span>Welcome, {user.name}</span>
       </div>
     </nav>

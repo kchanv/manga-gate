@@ -14,10 +14,16 @@ const DetailPage = () => {
       });
   }, []);
 
+  console.log(detail);
+
   return (
     <>
       <h1>Detail Page: {detail.title}</h1>
       <img src={detail.thumb} />
+      <h2>Author: {detail.author}</h2>
+      <h2>Type: {detail.type}</h2>
+      <h2>Status: {detail.status}</h2>
+      <h3>Synopsis: {detail.synopsis}</h3>
     </>
   );
 };
