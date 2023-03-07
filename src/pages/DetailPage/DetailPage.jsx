@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const DetailPage = () => {
   const { endpoint } = useParams();
   const [detail, setDetail] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -14,16 +15,16 @@ const DetailPage = () => {
       });
   }, []);
 
-  const handleAddToFav = () => {
-    console.log(`Added ${detail.title} to favorites`);
-    console.log(JSON.parse(localStorage.getItem("favorites")));
+  const addToFav = () => {
+    navigate("/fav", { state: { manga: detail } });
   };
 
   return (
     <>
       <h1>Detail Page: {detail.title}</h1>
       <img src={detail.thumb} alt="" />
-      <button onClick={handleAddToFav}>ADD</button>
+
+      <button onClick={addToFav}>ADD</button>
     </>
   );
 };

@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link, useLocation } from "react-router-dom";
 
 const Fav = () => {
   const location = useLocation();
   const [favManga, setFavManga] = useState([]);
+
+  useEffect(() => {
+    if (location.state) {
+      setFavManga((prevFavManga) => [prevFavManga, location.state.manga]);
+    }
+  }, [location.state]);
 
   return (
     <>
