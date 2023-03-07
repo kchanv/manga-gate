@@ -8,7 +8,12 @@ const Fav = () => {
 
   useEffect(() => {
     if (location.state) {
-      setFavManga((prevFavManga) => [prevFavManga, location.state.manga]);
+      const isMangaInFav = favManga.some(
+        (manga) => manga.id === location.state.manga.id
+      );
+      if (!isMangaInFav) {
+        setFavManga((prevFavManga) => [...prevFavManga, location.state.manga]);
+      }
     }
   }, [location.state]);
 
