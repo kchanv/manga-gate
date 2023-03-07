@@ -15,7 +15,8 @@ function App() {
   const [favManga, setFavManga] = useState([]);
 
   const addToFav = (manga) => {
-    const isMangaInFav = favManga.some((m) => m.id === manga.id);
+    const isMangaInFav = favManga.some((m) => m.title === manga.title);
+
     if (!isMangaInFav) {
       setFavManga((prevFavManga) => [...prevFavManga, manga]);
     }
