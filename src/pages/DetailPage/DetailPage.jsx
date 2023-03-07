@@ -15,15 +15,8 @@ const DetailPage = () => {
   }, []);
 
   const handleAddToFav = () => {
-    addToFav(detail);
     console.log(`Added ${detail.title} to favorites`);
     console.log(JSON.parse(localStorage.getItem("favorites")));
-  };
-
-  const addToFav = (manga) => {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    favorites.push(manga);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
   };
 
   return (
