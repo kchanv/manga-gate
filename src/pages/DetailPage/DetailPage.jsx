@@ -1,11 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./DetailPage.css";
+import { createComment } from "../../utilities/comments-service";
+import { getUser } from "../../utilities/users-service";
 
 const DetailPage = () => {
   const { endpoint } = useParams();
   const [detail, setDetail] = useState({});
   const [comments, setComments] = useState([]);
+  const [user, setUser] = useState(getUser());
 
   useEffect(() => {
     axios
@@ -15,19 +19,40 @@ const DetailPage = () => {
       });
   }, [endpoint]);
 
-  const handleCommentSubmit = (comment) => {
-    setComments([...comments, comment]);
+  useEffect(() => {
+    // on page load, load associated comments
+    axios.get("http://localhost:3003/api/comments/" + endpoint).then((resp) => {
+      //   setComments([resp.comments]);
+    });
+  }, []);
+
+  const handleCommentSubmit = async (comment) => {
+    // setComments([...comments, comment]);
+    const commentResponse = await createComment({
+      comment: comment,
+      user: user,
+      manga: detail?.manga_endpoint,
+    });
+
+    if (commentResponse.comment) {
+      setComments([...comments, comment]);
+    }
     // Send the comment to the server or persist it locally
   };
 
   return (
     <div className="container">
-      <h1>Detail Page: {detail.title}</h1>
-      <img src={detail.thumb} />
-      <h2>Author: {detail.author}</h2>
-      <h2>Type: {detail.type}</h2>
-      <h2>Status: {detail.status}</h2>
-      <h3>Synopsis: {detail.synopsis}</h3>
+      <div className="container-1">
+        <h1>Detail Page: {detail.title}</h1>
+        <img src={detail.thumb} />
+        <h2>Author: {detail.author}</h2>
+        <h2>Type: {detail.type}</h2>
+        <h2>Status: {detail.status}</h2>
+      </div>
+      <div className="container-2">
+        <h3>Synopsis: {detail.synopsis}</h3>
+      </div>
+
       <CommentBox onCommentSubmit={handleCommentSubmit} />
       <CommentList comments={comments} />
     </div>
