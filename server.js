@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 // Connect to the database
 require("./config/database");
+mongoose.connect(process.env.DATABASE_URL);
 
 const app = express();
 

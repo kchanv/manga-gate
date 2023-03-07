@@ -4,7 +4,7 @@ nav {
   align-items: center;
   background-color: #333;
   color: #fff;
-  padding: 10px 20px;
+  border: 2px solid red;
 }
 
 .logo h1 {
@@ -14,9 +14,11 @@ nav {
 
 .nav-links {
   list-style: none;
-  margin: 0;
-  padding: 0;
+
   display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  border: 2px solid blue;
 }
 
 .nav-links li {
@@ -28,7 +30,7 @@ nav {
 }
 
 .nav-links a {
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.2s ease-out;
@@ -40,4 +42,11 @@ nav {
 
 .welcome {
   font-size: 1.2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.2s ease-out;
+  border: 2px solid black;
 }
