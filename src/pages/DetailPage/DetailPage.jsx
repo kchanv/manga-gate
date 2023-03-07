@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-const DetailPage = () => {
+const DetailPage = ({ addToFav }) => {
   const { endpoint } = useParams();
   const [detail, setDetail] = useState({});
   const navigate = useNavigate();
@@ -15,8 +15,9 @@ const DetailPage = () => {
       });
   }, []);
 
-  const addToFav = () => {
-    navigate("/fav", { state: { manga: detail } });
+  const handleAddToFav = () => {
+    addToFav(detail);
+    navigate("/fav");
   };
 
   return (
@@ -24,7 +25,7 @@ const DetailPage = () => {
       <h1>Detail Page: {detail.title}</h1>
       <img src={detail.thumb} alt="" />
 
-      <button onClick={addToFav}>ADD</button>
+      <button onClick={handleAddToFav}>ADD</button>
     </>
   );
 };

@@ -12,6 +12,14 @@ import Fav from "../Fav/Fav";
 
 function App() {
   const [user, setUser] = useState(getUser);
+  const [favManga, setFavManga] = useState([]);
+
+  const addToFav = (manga) => {
+    const isMangaInFav = favManga.some((m) => m.id === manga.id);
+    if (!isMangaInFav) {
+      setFavManga((prevFavManga) => [...prevFavManga, manga]);
+    }
+  };
 
   return (
     <main className="App">
@@ -23,8 +31,11 @@ function App() {
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/collections" element={<Collections />} />
-            <Route path="/collections/:endpoint" element={<DetailPage />} />
-            <Route path="/fav" element={<Fav />} />
+            <Route
+              path="/collections/:endpoint"
+              element={<DetailPage addToFav={addToFav} />}
+            />
+            <Route path="/fav" element={<Fav favManga={favManga} />} />
           </Routes>
         </>
       ) : (
