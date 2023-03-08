@@ -20,6 +20,7 @@ const userSchema = new Schema(
       minLength: 3,
       required: true,
     },
+    favoriteManga: [{ type: String }],
   },
   {
     timestamps: true,

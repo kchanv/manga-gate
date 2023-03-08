@@ -34,7 +34,7 @@ function App() {
             <Route path="/collections" element={<Collections />} />
             <Route
               path="/collections/:endpoint"
-              element={<DetailPage addToFav={addToFav} />}
+              element={<DetailPage addToFav={addToFav} user={user} />}
             />
             <Route path="/fav" element={<Fav favManga={favManga} />} />
           </Routes>
