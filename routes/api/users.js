@@ -10,5 +10,7 @@ router.post("/", usersCtrl.create);
 router.post("/login", usersCtrl.login);
 router.get("/check-token", ensureLoggedIn, usersCtrl.checkToken);
 router.get("/collections", ensureLoggedIn, usersCtrl.checkToken);
+router.post("/fav", ensureLoggedIn, usersCtrl.addToFav);
+router.post("/fav/:mangaId", ensureLoggedIn, usersCtrl.deleteFromFav);
 
 module.exports = router;

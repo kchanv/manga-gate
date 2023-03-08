@@ -48,8 +48,48 @@ function createJWT(user) {
   );
 }
 
+async function addToFav(req, res) {
+  try {
+    const { manga } = req.body;
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    user.favorites.push(manga);
+    await user.save();
+
+    res.status(200).json({ msg: "Manga added to favorites" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: "Server error" });
+  }
+}
+
+async function deleteFromFav(req, res) {
+  try {
+    const { mangaId } = req.params;
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return res.status(404).json({ msg: "User not found" });
+    }
+
+    user.favorites = user.favorites.filter((manga) => manga.id !== mangaId);
+    await user.save();
+
+    res.status(200).json({ msg: "Manga removed from favorites" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: "Server error" });
+  }
+}
+
 module.exports = {
   create,
   login,
   checkToken,
+  addToFav,
+  deleteFromFav,
 };
