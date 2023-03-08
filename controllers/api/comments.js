@@ -15,10 +15,13 @@ async function create(req, res) {
 }
 
 async function getCommentsForManga(req, res) {
+  console.log(req.params.manga);
   try {
+    const comments = await Comment.find({ manga: req.params.manga });
+    console.log(comments);
     // get me comments that belong to req.manga-endpoint
     // return json collection of comments
-    res.json({});
+    res.json({ comments: comments });
   } catch (err) {
     res.status(400).json(err);
   }
