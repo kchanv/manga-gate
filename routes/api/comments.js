@@ -6,9 +6,6 @@ const ensureLoggedIn = require("../../config/ensureLoggedIn");
 
 router.post("/create", commentsCtrl.create);
 router.get("/check-token", ensureLoggedIn, commentsCtrl.checkToken);
-router.get(
-  "/:manga-endpoint",
-  ensureLoggedIn,
-  commentsCtrl.getCommentsForManga
-);
+// router.get("/:manga", ensureLoggedIn, commentsCtrl.getCommentsForManga);
+router.get("/:manga", commentsCtrl.getCommentsForManga);
 module.exports = router;
