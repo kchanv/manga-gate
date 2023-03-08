@@ -6,11 +6,41 @@
 } */
 
 .container-1 {
-  border: 2px solid red;
   width: 50%;
 }
 
 .container-2 {
-  border: 2px solid blue;
   width: 50%;
+}
+
+.container-1,
+.container-2 {
+  color: white;
+}
+
+.container-3 {
+  width: 50%;
+  float: right;
+  clear: both;
+  margin-top: -600px;
+}
+
+/* button {
+  width: 50%;
+} */
+
+/* .comment-list {
+  float: left;
+} */
+
+textarea {
+  width: 100%;
+}
+
+body {
+  background-color: rgb(44, 43, 43);
+}
+
+.white {
+  color: white;
 }

@@ -4,7 +4,7 @@ nav {
   align-items: center;
   background-color: #333;
   color: #fff;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .logo h1 {
@@ -18,7 +18,7 @@ nav {
   display: flex;
   flex-grow: 1;
   justify-content: space-evenly;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
 
 .nav-links li {
