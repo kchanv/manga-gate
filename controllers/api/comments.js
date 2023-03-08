@@ -7,8 +7,27 @@ function checkToken(req, res) {
 
 async function create(req, res) {
   try {
-    const comment = await Comment.create(req.body);
-    res.json({ comment: comment });
+    const comment = await Comment.create({
+      comment: req.body.comment,
+      manga: req.body.manga,
+      user: req.body.user._id,
+    });
+    comment.save((err, comment) => {
+      comment.populate("user");
+    });
+    res.json({
+      comment: comment,
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
+
+async function update(req, res) {
+  try {
+    const comment = await Comment.findOneAndUpdate({
+      // Find the record using ID.. then update the comment.. then save...
+    });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,7 +36,9 @@ async function create(req, res) {
 async function getCommentsForManga(req, res) {
   console.log(req.params.manga);
   try {
-    const comments = await Comment.find({ manga: req.params.manga });
+    const comments = await Comment.find({ manga: req.params.manga }).populate(
+      "user"
+    );
     console.log(comments);
     // get me comments that belong to req.manga-endpoint
     // return json collection of comments
