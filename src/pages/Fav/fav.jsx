@@ -3,11 +3,11 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Fav = ({ favManga }) => {
-  const [favManga, setFavManga] = useState([]);
+  // const [favManga, setFavManga] = useState([]);
 
-  useEffect(() => {
-    favManga;
-  }, []);
+  // useEffect(() => {
+  //   favManga;
+  // }, []);
 
   return (
     <>
