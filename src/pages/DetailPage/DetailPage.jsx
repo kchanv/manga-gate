@@ -13,7 +13,7 @@ const DetailPage = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/manga/detail/" + endpoint)
+      .get("https://manga-gate-api.herokuapp.com/api/manga/detail/" + endpoint)
       .then((resp) => {
         setDetail(resp.data);
       });
@@ -57,7 +57,7 @@ const DetailPage = () => {
 
   const handleSave = async (comment, index) => {
     const resp = await axios.put(
-      "http://localhost:3001/api/comments/:id/update",
+      "http://localhost:3001/api/comments/" + comment._id + "/update",
       comment
     );
     if (resp.data.comment._id.length > 0) {

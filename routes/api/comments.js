@@ -8,5 +8,5 @@ router.post("/create", commentsCtrl.create);
 router.get("/check-token", ensureLoggedIn, commentsCtrl.checkToken);
 // router.get("/:manga", ensureLoggedIn, commentsCtrl.getCommentsForManga);
 router.get("/:manga", commentsCtrl.getCommentsForManga);
-// router.put("/:id/update", commentsCtrl.update);
+router.put("/:id/update", commentsCtrl.update);
 module.exports = router;
