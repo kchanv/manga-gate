@@ -83,7 +83,7 @@ const DetailPage = () => {
         <h2>Status: {detail.status}</h2>
       </div>
       <div className="container-2">
-        <h3>Synopsis: {detail.synopsis}</h3>
+        <h2>Synopsis:</h2> <h3> {detail.synopsis}</h3>
       </div>
       <div className="container-3">
         <CommentBox
