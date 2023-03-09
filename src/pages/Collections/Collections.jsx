@@ -34,6 +34,10 @@ const Collections = () => {
 
   return (
     <div className="container">
+      <div className="header">
+        <h1>Enjoy hit Japanese manga series.</h1>
+        <h1>You can discuss and save your favorite Mangas at Manga-Gate!</h1>
+      </div>
       <div style={{ display: "inline-block" }}>
         <input
           type="text"
@@ -74,7 +78,9 @@ const Collections = () => {
             {" "}
             Next{" "}
           </button>
-          <p>Page: {page}</p>
+          <div className="page">
+            <p>Page: {page}</p>
+          </div>
         </>
       )}
     </div>

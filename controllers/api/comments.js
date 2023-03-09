@@ -23,15 +23,15 @@ async function create(req, res) {
   }
 }
 
-async function update(req, res) {
-  try {
-    const comment = await Comment.findOneAndUpdate({
-      // Find the record using ID.. then update the comment.. then save...
-    });
-  } catch (err) {
-    res.status(400).json(err);
-  }
-}
+// async function update(req, res) {
+//   try {
+//     const comment = await Comment.findOneAndUpdate({
+//       // Find the record using ID.. then update the comment.. then save...
+//     });
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// }
 
 async function getCommentsForManga(req, res) {
   console.log(req.params.manga);
@@ -50,6 +50,7 @@ async function getCommentsForManga(req, res) {
 
 module.exports = {
   create,
+  //   update,
   checkToken,
   getCommentsForManga,
 };
