@@ -36,18 +36,6 @@ async function login(req, res) {
     res.status(400).json(err);
   }
 }
-
-/*-- Helper Functions --*/
-
-function createJWT(user) {
-  return jwt.sign(
-    // data payload
-    { user },
-    process.env.SECRET,
-    { expiresIn: "24h" }
-  );
-}
-
 async function addToFav(req, res) {
   try {
     const { manga } = req.body;
@@ -84,6 +72,17 @@ async function deleteFromFav(req, res) {
     console.error(err.message);
     res.status(500).json({ msg: "Server error" });
   }
+}
+
+/*-- Helper Functions --*/
+
+function createJWT(user) {
+  return jwt.sign(
+    // data payload
+    { user },
+    process.env.SECRET,
+    { expiresIn: "24h" }
+  );
 }
 
 module.exports = {

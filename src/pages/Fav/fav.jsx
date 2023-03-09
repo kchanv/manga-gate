@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-const Fav = ({ favManga }) => {
+const Fav = ({ favManga, setUser, user }) => {
   return (
     <>
       <h1>Favorites</h1>

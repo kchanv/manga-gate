@@ -17,8 +17,24 @@ const DetailPage = ({ addToFav }) => {
 
   const handleAddToFav = () => {
     addToFav(detail);
-    navigate("/fav");
+    navigate("/favs");
   };
+
+  fetch("/api/users/fav", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        console.log("Manga added to favorites successfully!");
+      }
+    })
+    .catch((error) => {
+      console.error("Error adding manga to favorites:", error);
+    });
 
   return (
     <>
