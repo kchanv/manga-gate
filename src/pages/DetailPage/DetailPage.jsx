@@ -17,24 +17,24 @@ const DetailPage = ({ addToFav }) => {
 
   const handleAddToFav = () => {
     addToFav(detail);
-    navigate("/favs");
-  };
-
-  fetch("/api/users/fav", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({}),
-  })
-    .then((response) => {
-      if (!response.ok) {
-        console.log("Manga added to favorites successfully!");
-      }
+    fetch("/api/users/fav", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+      body: JSON.stringify(detail),
     })
-    .catch((error) => {
-      console.error("Error adding manga to favorites:", error);
-    });
+      .then((response) => {
+        if (!response.ok) {
+          console.log("Manga added to favorites successfully!");
+          navigate("/favs");
+        }
+      })
+      .catch((error) => {
+        console.error("Error adding manga to favorites:", error);
+      });
+  };
 
   return (
     <>

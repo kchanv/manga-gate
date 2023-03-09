@@ -38,7 +38,8 @@ async function login(req, res) {
 }
 async function addToFav(req, res) {
   try {
-    const { manga } = req.body;
+    console.log(req.body);
+
     const user = await User.findById(req.user.id);
 
     if (!user) {
