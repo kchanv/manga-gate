@@ -22,9 +22,7 @@ function App() {
     }
   };
   useEffect(() => {
-    if (!user) {
-      setFavManga([]);
-    }
+    setFavManga([]);
   }, [user]);
 
   return (

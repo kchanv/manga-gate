@@ -56,8 +56,9 @@ async function addToFav(req, res) {
       await manga.save();
     }
 
-    const user = await User.findById(req.user.id);
+    const user = await User.findById(req.user._id);
     if (!user) {
+      console.log("user not found");
       return res.status(404).json({ msg: "User not found" });
     }
     user.favorite.push(manga._id);

@@ -17,7 +17,7 @@ const DetailPage = ({ addToFav }) => {
 
   const handleAddToFav = () => {
     addToFav(detail);
-    fetch("/api/users/favs", {
+    fetch("/api/users/fav", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const DetailPage = ({ addToFav }) => {
       body: JSON.stringify(detail),
     })
       .then((response) => {
-        if (!response.ok) {
+        if (response.ok) {
           console.log("Manga added to favorites successfully!");
           navigate("/favs");
         }

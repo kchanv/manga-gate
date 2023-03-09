@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
 const Fav = ({ favManga }) => {
+  const [favManga, setFavManga] = useState([]);
+
+  useEffect(() => {
+    favManga;
+  }, []);
+
   return (
     <>
       <h1>Favorites</h1>
