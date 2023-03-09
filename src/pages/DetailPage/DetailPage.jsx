@@ -4,12 +4,14 @@ import { useParams } from "react-router-dom";
 import "./DetailPage.css";
 import { createComment } from "../../utilities/comments-service";
 import { getUser } from "../../utilities/users-service";
+import { addToFav } from "../../../controllers/api/users";
 
-const DetailPage = () => {
+const DetailPage = ({ addToFav }) => {
   const { endpoint } = useParams();
   const [detail, setDetail] = useState({});
   const [comments, setComments] = useState([]);
   const [user, setUser] = useState(getUser());
+  const navigate = useState;
 
   useEffect(() => {
     axios
@@ -125,7 +127,6 @@ const CommentBox = ({ onCommentSubmit, title, user }) => {
     await onCommentSubmit(comment);
     setComment({ comment: "", manga: title, user: user });
   };
-
   return (
     <form onSubmit={handleCommentSubmit}>
       <textarea value={comment.comment} onChange={handleCommentChange} />
@@ -133,7 +134,6 @@ const CommentBox = ({ onCommentSubmit, title, user }) => {
     </form>
   );
 };
-
 const CommentList = ({
   comments,
   handleEditMode,
@@ -170,6 +170,34 @@ const CommentList = ({
         ))
       )}
     </div>
+  );
+};
+const handleAddToFav = () => {
+  addToFav(detail);
+  fetch("/api/users/fav", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+    body: JSON.stringify(detail),
+  })
+    .then((response) => {
+      if (response.ok) {
+        console.log("Manga added to favorites successfully!");
+        navigate("/favs");
+      }
+    })
+    .catch((error) => {
+      console.error("Error adding manga to favorites:", error);
+    });
+
+  return (
+    <>
+      <h1>Detail Page: {detail.title}</h1>
+      <img src={detail.thumb} />
+      <button onClick={() => handleAddToFav(addToFav)}>ADD</button>
+    </>
   );
 };
 

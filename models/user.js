@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Manga = require("./manga");
 const bcrypt = require("bcrypt");
 
 SALT_ROUNDS = 6;
@@ -20,6 +21,7 @@ const userSchema = new Schema(
       minLength: 3,
       required: true,
     },
+    favorite: [{ type: Schema.Types.ObjectId, ref: Manga }],
   },
   {
     timestamps: true,

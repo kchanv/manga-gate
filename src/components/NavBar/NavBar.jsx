@@ -23,6 +23,18 @@ function NavBar({ user, setUser }) {
     //   </Link>
     // </nav>
     <nav>
+      <Link to="/orders">Order History</Link>
+      &nbsp; | &nbsp;
+      <Link to="/fav">Favourite Manga's</Link>
+      &nbsp; | &nbsp;
+      <Link to="/collections">Manga Collections</Link>
+      &nbsp; | &nbsp;
+      <Link to="/orders/new">New Order</Link>
+      &nbsp; | &nbsp;<span>Welcome, {user.name}</span>
+      &nbsp; | &nbsp;
+      <Link to="" onClick={handleLogOut}>
+        Log Out
+      </Link>
       <div className="logo">
         <h1>MANGA-GATE</h1>
       </div>
