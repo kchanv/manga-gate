@@ -83,6 +83,10 @@ const Collections = () => {
           </div>
         </>
       )}
+
+      <Link to="/about">
+        <button>About</button>
+      </Link>
     </div>
   );
 };
