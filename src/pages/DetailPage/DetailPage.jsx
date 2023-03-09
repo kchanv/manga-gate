@@ -17,7 +17,7 @@ const DetailPage = ({ addToFav }) => {
 
   const handleAddToFav = () => {
     addToFav(detail);
-    fetch("/api/users/fav", {
+    fetch("/api/users/favs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

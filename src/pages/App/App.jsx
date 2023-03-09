@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import AuthPage from "../AuthPage/AuthPage";
@@ -21,6 +21,11 @@ function App() {
       setFavManga((prevFavManga) => [...prevFavManga, manga]);
     }
   };
+  useEffect(() => {
+    if (!user) {
+      setFavManga([]);
+    }
+  }, [user]);
 
   return (
     <main className="App">
@@ -36,12 +41,7 @@ function App() {
               path="/collections/:endpoint"
               element={<DetailPage addToFav={addToFav} />}
             />
-            <Route
-              path="/favs"
-              element={
-                <Fav favManga={favManga} user={user} setUser={setUser} />
-              }
-            />
+            <Route path="/favs" element={<Fav favManga={favManga} />} />
           </Routes>
         </>
       ) : (
