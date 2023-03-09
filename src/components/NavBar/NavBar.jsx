@@ -23,25 +23,13 @@ function NavBar({ user, setUser }) {
     //   </Link>
     // </nav>
     <nav>
-      <Link to="/orders">Order History</Link>
-      &nbsp; | &nbsp;
-      <Link to="/fav">Favourite Manga's</Link>
-      &nbsp; | &nbsp;
-      <Link to="/collections">Manga Collections</Link>
-      &nbsp; | &nbsp;
-      <Link to="/orders/new">New Order</Link>
-      &nbsp; | &nbsp;<span>Welcome, {user.name}</span>
-      &nbsp; | &nbsp;
-      <Link to="" onClick={handleLogOut}>
-        Log Out
-      </Link>
       <div className="logo">
         <h1>MANGA-GATE</h1>
       </div>
       <ul class="nav-links">
         <div className="nav-link">
           <li>
-            <Link to="/orders">Order History</Link>
+            <Link to="/fav">Favourite Manga's</Link>
           </li>
         </div>
         <div className="nav-link">
@@ -49,11 +37,7 @@ function NavBar({ user, setUser }) {
             <Link to="/collections">Manga Collections</Link>
           </li>
         </div>
-        <div className="nav-link">
-          <li>
-            <Link to="/orders/new">New Order</Link>
-          </li>
-        </div>
+
         <div className="nav-link">
           <li>
             <Link to="" onClick={handleLogOut}>

@@ -31,7 +31,12 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/" element={<h1>ROOT</h1>} />
+            <Route
+              path="/"
+              element=<div className="white">
+                {<h1>WELCOME TO MANGA-GATE</h1>}
+              </div>
+            />
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/collections" element={<Collections />} />
