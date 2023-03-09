@@ -12,3 +12,7 @@ export async function login(userData) {
 export function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }
+
+export async function addToFavorites(mangaId) {
+  return sendRequest(`${BASE_URL}/fav`, "POST", { manga: mangaId });
+}
