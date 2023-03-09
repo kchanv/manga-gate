@@ -1,6 +1,7 @@
-// import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import * as userService from "../../utilities/users-service";
+import "./NavBar.css";
 
 function NavBar({ user, setUser }) {
   function handleLogOut() {
@@ -9,6 +10,18 @@ function NavBar({ user, setUser }) {
   }
 
   return (
+    // <nav>
+    //   <Link to="/orders">Order History</Link>
+    //   &nbsp; | &nbsp;
+    //   <Link to="/collections">Manga Collections</Link>
+    //   &nbsp; | &nbsp;
+    //   <Link to="/orders/new">New Order</Link>
+    //   &nbsp; | &nbsp;<span>Welcome, {user.name}</span>
+    //   &nbsp; | &nbsp;
+    //   <Link to="" onClick={handleLogOut}>
+    //     Log Out
+    //   </Link>
+    // </nav>
     <nav>
       <Link to="/orders">Order History</Link>
       &nbsp; | &nbsp;
@@ -22,6 +35,36 @@ function NavBar({ user, setUser }) {
       <Link to="" onClick={handleLogOut}>
         Log Out
       </Link>
+      <div className="logo">
+        <h1>MANGA-GATE</h1>
+      </div>
+      <ul class="nav-links">
+        <div className="nav-link">
+          <li>
+            <Link to="/orders">Order History</Link>
+          </li>
+        </div>
+        <div className="nav-link">
+          <li>
+            <Link to="/collections">Manga Collections</Link>
+          </li>
+        </div>
+        <div className="nav-link">
+          <li>
+            <Link to="/orders/new">New Order</Link>
+          </li>
+        </div>
+        <div className="nav-link">
+          <li>
+            <Link to="" onClick={handleLogOut}>
+              Log Out
+            </Link>
+          </li>
+        </div>
+      </ul>
+      <div className="welcome">
+        <span>Welcome, {user.name}</span>
+      </div>
     </nav>
   );
 }

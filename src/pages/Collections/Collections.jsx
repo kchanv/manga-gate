@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Collections.css";
 
 const Collections = () => {
   const [manga, setManga] = useState([]);
@@ -9,7 +10,7 @@ const Collections = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/manga/popular/" + page)
+      .get("https://manga-gate-api.herokuapp.com/api/manga/popular/" + page)
       .then((resp) => {
         setManga(resp.data.manga_list);
       });
@@ -26,13 +27,19 @@ const Collections = () => {
   };
 
   const performSearch = () => {
-    axios.get("http://localhost:3000/api/search/" + search).then((resp) => {
-      setManga(resp.data.manga_list);
-    });
+    axios
+      .get("https://manga-gate-api.herokuapp.com/api/search/" + search)
+      .then((resp) => {
+        setManga(resp.data.manga_list);
+      });
   };
 
   return (
     <div className="container">
+      <div className="header">
+        <h1>Enjoy hit Japanese manga series.</h1>
+        <h1>You can discuss and save your favorite Mangas at Manga-Gate!</h1>
+      </div>
       <div style={{ display: "inline-block" }}>
         <input
           type="text"
@@ -41,17 +48,19 @@ const Collections = () => {
         />
         <button onClick={() => performSearch()}>Search</button>
       </div>
-      <ul>
-        {manga &&
-          manga.map((m) => {
-            return (
-              <li style={{ listStyle: "none" }} key={m.endpoint}>
-                <Link to={"/collections/" + m.endpoint}>{m.title}</Link>
-              </li>
-            );
-          })}
-      </ul>
-      {manga && manga.length > 0 && (
+      <div className="links-container">
+        <ul>
+          {manga &&
+            manga.map((m) => {
+              return (
+                <li style={{ listStyle: "none" }} key={m.endpoint}>
+                  <Link to={"/collections/" + m.endpoint}>{m.title}</Link>
+                </li>
+              );
+            })}
+        </ul>
+      </div>
+      {manga.length > 0 && (
         <>
           <button
             id="prev"
@@ -71,9 +80,15 @@ const Collections = () => {
             {" "}
             Next{" "}
           </button>
-          <p>Page: {page}</p>
+          <div className="page">
+            <p>Page: {page}</p>
+          </div>
         </>
       )}
+
+      <Link to="/about">
+        <button>About</button>
+      </Link>
     </div>
   );
 };
