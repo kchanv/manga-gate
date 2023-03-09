@@ -10,7 +10,7 @@ const Collections = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/manga/popular/" + page)
+      .get("https://manga-gate-api.herokuapp.com/api/manga/popular/" + page)
       .then((resp) => {
         setManga(resp.data.manga_list);
       });
@@ -27,9 +27,11 @@ const Collections = () => {
   };
 
   const performSearch = () => {
-    axios.get("http://localhost:3000/api/search/" + search).then((resp) => {
-      setManga(resp.data.manga_list);
-    });
+    axios
+      .get("https://manga-gate-api.herokuapp.com/api/search/" + search)
+      .then((resp) => {
+        setManga(resp.data.manga_list);
+      });
   };
 
   return (
