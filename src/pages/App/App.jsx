@@ -62,7 +62,10 @@ function App() {
               path="/collections/:endpoint"
               element={<DetailPage addToFav={addToFav} />}
             />
-            <Route path="/favs" element={<Fav favManga={favManga} />} />
+            <Route
+              path="/favs"
+              element={<Fav favManga={favManga} setFavManga={setFavManga} />}
+            />
           </Routes>
         </>
       ) : (

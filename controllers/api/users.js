@@ -74,13 +74,14 @@ async function addToFav(req, res) {
 async function deleteFromFav(req, res) {
   try {
     const { mangaId } = req.params;
-    const user = await User.findById(req.user.id);
+    const user = await User.findById(req.user._id).populate("favorite");
 
     if (!user) {
       return res.status(404).json({ msg: "User not found" });
     }
 
-    user.favorites = user.favorites.filter((manga) => manga.id !== mangaId);
+    user.favorite = user.favorite.filter((manga) => manga.title !== mangaId);
+
     await user.save();
 
     res.status(200).json({ msg: "Manga removed from favorites" });
