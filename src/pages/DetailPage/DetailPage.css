@@ -44,3 +44,8 @@ body {
 .white {
   color: white;
 }
+
+.center {
+  text-align: center;
+  margin-left: -950px;
+}

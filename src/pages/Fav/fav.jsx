@@ -11,11 +11,19 @@ const Fav = ({ favManga }) => {
 
   return (
     <>
-      <h1>Favorites</h1>
+      <div className="white">
+        <h1>Favorites</h1>
+      </div>
       <ul>
         {favManga.map((manga) => (
           <li key={manga.id}>
-            <Link to={`/fav/${manga.endpoint}`}>{manga.title}</Link>
+            <Link to={`/fav/${manga.endpoint}`}>
+              <img src={manga.thumb} alt={manga.title} />
+              <div>
+                <h2>{manga.title}</h2>
+                <p>By {manga.author}</p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>

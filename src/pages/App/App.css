@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.vertical-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Adjust height as needed */
+  /* overflow: auto; */
+  padding: 0 20px; /* Add padding to left and right */
+  margin-top: 100px;
+}
+
+.vertical-text-container h3 {
+  font-size: 18px; /* Adjust font size as needed */
+  line-height: 1.5; /* Add space between lines */
+  white-space: pre-line;
+  max-width: 800px;
+  padding: 10px;
+}
