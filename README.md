@@ -36,8 +36,7 @@ https://manga-gate-api.herokuapp.com/
 - Functionality to leave ratings for specific Manga 
   
 - Hook up another 3rd API with English synopsis 
-  
-- Style Auth/Login page
+ 
 
 - Query/sort by genres and categories 
 
