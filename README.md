@@ -24,7 +24,9 @@ At Manga-Gate, we're more than just a digital manga platform. We're a community 
 
 # Getting Started
 
-http://localhost:3000/collections
+https://manga-gate95.herokuapp.com/
+
+*
 https://manga-gate-api.herokuapp.com/
 
 
