@@ -29,19 +29,19 @@ function NavBar({ user, setUser }) {
       <ul class="nav-links">
         <div className="nav-link">
           <li>
-            <Link to="/favs">Favourite Manga's</Link>
+            <Link to="/favs">FAVORITE MANGAS</Link>
           </li>
         </div>
         <div className="nav-link">
           <li>
-            <Link to="/collections">Manga Collections</Link>
+            <Link to="/collections">MANGA COLLECTIONS</Link>
           </li>
         </div>
 
         <div className="nav-link">
           <li>
             <Link to="" onClick={handleLogOut}>
-              Log Out
+              LOG OUT
             </Link>
           </li>
         </div>

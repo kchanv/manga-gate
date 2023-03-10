@@ -48,5 +48,8 @@ nav {
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.2s ease-out;
-  border: 2px solid black;
+}
+
+a {
+  border: none;
 }
