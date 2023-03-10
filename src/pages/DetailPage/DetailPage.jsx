@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./DetailPage.css";
 import { createComment } from "../../utilities/comments-service";
 import { getUser } from "../../utilities/users-service";
+import Fav from "../Fav/Fav";
 
 const DetailPage = ({ addToFav }) => {
   const { endpoint } = useParams();
@@ -98,8 +99,6 @@ const DetailPage = ({ addToFav }) => {
   return (
     <div className="container">
       <div className="container-1">
-        <h2>Detail Page: {detail.title}</h2>
-
         <h1>{detail.title}</h1>
         <img src={detail.thumb} />
         <h2>Author: {detail.author}</h2>
@@ -109,7 +108,9 @@ const DetailPage = ({ addToFav }) => {
       <div className="container-2">
         <h2>Synopsis:</h2> <h3> {detail.synopsis}</h3>
       </div>
-      <button onClick={handleAddToFav}>ADD</button>
+      <div className="center">
+        <button onClick={handleAddToFav}>Add to Favourites</button>
+      </div>
       <div className="container-3">
         <CommentBox
           onCommentSubmit={handleCommentSubmit}
