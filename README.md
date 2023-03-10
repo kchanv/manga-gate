@@ -3,7 +3,7 @@
 # Manga-Gate
               
 
-At Manga-Gate, we're more than just a digital manga platform. We're a community of manga lovers and advocates who are dedicated to bringing you a reference of the highest quality localized manga available. We believe that everyone deserves access to the rich and exciting world of Japanese manga, and we're committed to making that world more accessible than ever before. From action-adventure epics to heart-pounding romances, from blockbuster titles to hidden gems waiting to be discovered, we know we have just the right manga for you. And with our easy-to-use platform, you'll have access to save a Manga to your favorite for record-keeping, or discuss with others about your favorite Mangas!
+At Manga-Gate, we're more than just a digital manga platform. We're a community of manga lovers and advocates who are dedicated to bringing you a reference of the highest quality localized manga available. We believe that everyone deserves access to a community to discuss the rich and exciting world of Japanese manga, and we're committed to making that world more accessible than ever before. From action-adventure epics to heart-pounding romances, from blockbuster titles to hidden gems waiting to be discovered, we know we have your favorite Mangas! And with our easy-to-use platform, you'll have access to save a Manga to your favorite for record-keeping, or discuss with others about your favorite Mangas!
 
 # Screenshot
 
