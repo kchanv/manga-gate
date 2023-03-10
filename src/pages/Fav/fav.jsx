@@ -17,7 +17,7 @@ const Fav = ({ favManga }) => {
       <ul>
         {favManga.map((manga) => (
           <li key={manga.id}>
-            <Link to={`/fav/${manga.endpoint}`}>
+            <Link to={`/favs/${manga.endpoint}`}>
               <img src={manga.thumb} alt={manga.title} />
               <div>
                 <h2>{manga.title}</h2>
