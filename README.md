@@ -1,70 +1,41 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Manga-Gate
+              
 
-In the project directory, you can run:
+At Manga-Gate, we're more than just a digital manga platform. We're a community of manga lovers and advocates who are dedicated to bringing you the highest quality localized manga available. We believe that everyone deserves access to the rich and exciting world of Japanese manga, and we're committed to making that world more accessible than ever before. Whether you're a long-time fan of the medium or just discovering it for the first time, we have something for everyone. From action-adventure epics to heart-pounding romances, from blockbuster titles to hidden gems waiting to be discovered, we know we have just the right manga for you. And with our easy-to-use platform, you'll have access to it all at your fingertips!
 
-### `npm start`
+# Screenshot
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[![F84-B87-FC-A40-C-49-E8-854-A-E453-C9-ABCA9-A.jpg](https://i.postimg.cc/52cbh35B/F84-B87-FC-A40-C-49-E8-854-A-E453-C9-ABCA9-A.jpg)](https://postimg.cc/3dZsp2cN)
+[![0185-D9-F2-CAD5-4253-A317-E44814534-A6-F.jpg](https://i.postimg.cc/HWqLmdd8/0185-D9-F2-CAD5-4253-A317-E44814534-A6-F.jpg)](https://postimg.cc/3WZhCMy3)
+[![E6-DDC576-F6-BD-40-C7-B0-E3-50-BF14036-CC6.jpg](https://i.postimg.cc/s2MF1GJj/E6-DDC576-F6-BD-40-C7-B0-E3-50-BF14036-CC6.jpg)](https://postimg.cc/jWY3F59m)
+[![E46-DDB31-EBFD-4-F7-D-8889-A78-DA334-E4-CE.jpg](https://i.postimg.cc/rm4vN6b7/E46-DDB31-EBFD-4-F7-D-8889-A78-DA334-E4-CE.jpg)](https://postimg.cc/CBFPw2w4)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- JavaScript
+- HTML
+- CSS
+- Mongoose
+- Express.JS
+- React
 
-### `npm run build`
+# Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+http://localhost:3000/collections
+https://manga-gate-api.herokuapp.com/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Next Steps
 
-### `npm run eject`
+  
+- Functionality to leave ratings for specific Manga 
+  
+- Hook up another 3rd API with English synopsis 
+  
+- Style Auth/Login page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Query/sort by genres and categories 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
