@@ -36,6 +36,7 @@ function App() {
               element=<div className="white">
                 <h1>WELCOME TO MANGA-GATE</h1>
                 <div className="vertical-text-container">
+                  <img src="/images/manga.png" alt="Manga" />
                   <h3>
                     At Manga-Gate, we're more than just a digital manga
                     platform. We're a community of manga lovers and advocates

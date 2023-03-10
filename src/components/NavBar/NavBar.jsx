@@ -29,7 +29,7 @@ function NavBar({ user, setUser }) {
       <ul class="nav-links">
         <div className="nav-link">
           <li>
-            <Link to="/fav">Favourite Manga's</Link>
+            <Link to="/favs">Favourite Manga's</Link>
           </li>
         </div>
         <div className="nav-link">
